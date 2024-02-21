@@ -11,7 +11,6 @@ function App() {
     function fetchPhoto() {
       axios.get(URL)
         .then(res => {
-          console.log(res.data)
           setApod(res.data)
         })
         .catch(err => {
@@ -19,8 +18,8 @@ function App() {
         })
     }
     fetchPhoto()
-    setApod()
-  }, [])
+    }, [])
+    
   if (!apod) return 'Fetching Photo of the Day...'
   return (
     <section>
